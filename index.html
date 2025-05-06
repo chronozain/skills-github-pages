@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekiwa Roofing and Construction LLC | Professional Roofing Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .contact-icon {
+            transition: all 0.3s ease;
+        }
+        .contact-icon:hover {
+            transform: scale(1.1);
+        }
+        .carousel {
+            position: relative;
+            overflow: hidden;
+        }
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .carousel-item {
+            min-width: 100%;
+        }
+        .carousel-item img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 50%;
+        }
+        .carousel-control.prev {
+            left: 15px;
+        }
+        .carousel-control.next {
+            right: 15px;
+        }
+        .carousel-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.5);
+            cursor: pointer;
+        }
+        .carousel-indicator.active {
+            background-color: white;
+        }
+        .review-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .star {
+            color: #FFD700;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button id="switchToEnglish" class="bg-blue-500 text-white px-4 py-2 rounded-l-lg focus:outline-none">EN</button>
+        <button id="switchToSpanish" class="bg-gray-200 text-gray-800 px-4 py-2 rounded-r-lg focus:outline-none">ES</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-home text-blue-500 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-gray-800">Ekiwa Roofing and Construction LLC</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="nav-link text-gray-800 hover:text-blue-500 px-3 py-2 text-sm font-medium" data-en="Home" data-es="Inicio">Home</a>
+                        <a href="#services" class="nav-link text-gray-800 hover:text-blue-500 px-3 py-2 text-sm font-medium" data-en="Services" data-es="Servicios">Services</a>
+                        <a href="#gallery" class="nav-link text-gray-800 hover:text-blue-500 px-3 py-2 text-sm font-medium" data-en="Gallery" data-es="Galería">Gallery</a>
+                        <a href="#reviews" class="nav-link text-gray-800 hover:text-blue-500 px-3 py-2 text-sm font-medium" data-en="Reviews" data-es="Reseñas">Reviews</a>
+                        <a href="#about" class="nav-link text-gray-800 hover:text-blue-500 px-3 py-2 text-sm font-medium" data-en="About" data-es="Nosotros">About</a>
+                        <a href="#contact" class="nav-link text-gray-800 hover:text-blue-500 px-3 py-2 text-sm font-medium" data-en="Contact" data-es="Contacto">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-800 hover:text-blue-500 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-blue-500" data-en="Home" data-es="Inicio">Home</a>
+                <a href="#services" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-blue-500" data-en="Services" data-es="Servicios">Services</a>
+                <a href="#gallery" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-blue-500" data-en="Gallery" data-es="Galería">Gallery</a>
+                <a href="#reviews" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-blue-500" data-en="Reviews" data-es="Reseñas">Reviews</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-blue-500" data-en="About" data-es="Nosotros">About</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-blue-500" data-en="Contact" data-es="Contacto">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero text-white py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6" data-en="Professional Roofing Solutions" data-es="Soluciones Profesionales en Techados">Professional Roofing Solutions</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" data-en="Quality craftsmanship and reliable service for all your roofing needs" data-es="Artesanía de calidad y servicio confiable para todas sus necesidades de techado">Quality craftsmanship and reliable service for all your roofing needs</p>
+            <a href="#contact" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg inline-block transition duration-300" data-en="Get a Free Quote" data-es="Obtener Presupuesto Gratis">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12" data-en="Our Roofing Services" data-es="Nuestros Servicios de Techado">Our Roofing Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-blue-500 flex items-center justify-center">
+                        <i class="fas fa-home text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3" data-en="Shingles Installation" data-es="Instalación de Tejas">Shingles Installation</h3>
+                        <p class="text-gray-600 mb-4" data-en="Our expert team specializes in professional shingles installation for roofs. Using top-quality materials and precise techniques, we ensure a flawless and durable roof for your property." data-es="Nuestro equipo experto se especializa en la instalación profesional de tejas para techos. Utilizando materiales de primera calidad y técnicas precisas, garantizamos un techo impecable y duradero para su propiedad.">Our expert team specializes in professional shingles installation for roofs. Using top-quality materials and precise techniques, we ensure a flawless and durable roof for your property.</p>
+                        <a href="#contact" class="text-blue-500 font-medium inline-flex items-center" data-en="Learn more" data-es="Saber más">
+                            <span>Learn more</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-green-500 flex items-center justify-center">
+                        <i class="fas fa-layer-group text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3" data-en="TPO Membrane" data-es="Membrana TPO">TPO Membrane</h3>
+                        <p class="text-gray-600 mb-4" data-en="Our skilled team specializes in professional TPO membrane installation. TPO membranes offer exceptional durability and weather resistance for a watertight roof covering." data-es="Nuestro equipo especializado se dedica a la instalación profesional de membranas TPO. Las membranas TPO ofrecen una durabilidad excepcional y resistencia a la intemperie para un techo impermeable.">Our skilled team specializes in professional TPO membrane installation. TPO membranes offer exceptional durability and weather resistance for a watertight roof covering.</p>
+                        <a href="#contact" class="text-blue-500 font-medium inline-flex items-center" data-en="Learn more" data-es="Saber más">
+                            <span>Learn more</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-yellow-500 flex items-center justify-center">
+                        <i class="fas fa-industry text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3" data-en="Metal Sheet Roof" data-es="Techos de Lámina Metálica">Metal Sheet Roof</h3>
+                        <p class="text-gray-600 mb-4" data-en="We specialize in precise installation of metal sheet roofs. Our experienced technicians create watertight barriers that offer exceptional protection against the elements." data-es="Nos especializamos en la instalación precisa de techos de lámina metálica. Nuestros técnicos experimentados crean barreras impermeables que ofrecen una protección excepcional contra los elementos.">We specialize in precise installation of metal sheet roofs. Our experienced technicians create watertight barriers that offer exceptional protection against the elements.</p>
+                        <a href="#contact" class="text-blue-500 font-medium inline-flex items-center" data-en="Learn more" data-es="Saber más">
+                            <span>Learn more</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-red-500 flex items-center justify-center">
+                        <i class="fas fa-trash-alt text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3" data-en="Roof Tear-Off" data-es="Remoción de Techos">Roof Tear-Off</h3>
+                        <p class="text-gray-600 mb-4" data-en="Our professional team specializes in expert roof tear-off services. We meticulously remove all layers of existing roofing materials to prepare your roof for a fresh start." data-es="Nuestro equipo profesional se especializa en servicios expertos de remoción de techos. Eliminamos meticulosamente todas las capas de materiales de techado existentes para preparar su techo para un nuevo comienzo.">Our professional team specializes in expert roof tear-off services. We meticulously remove all layers of existing roofing materials to prepare your roof for a fresh start.</p>
+                        <a href="#contact" class="text-blue-500 font-medium inline-flex items-center" data-en="Learn more" data-es="Saber más">
+                            <span>Learn more</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 5 - Added Roof Repair -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-purple-500 flex items-center justify-center">
+                        <i class="fas fa-tools text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3" data-en="Roof Repair" data-es="Reparación de Techos">Roof Repair</h3>
+                        <p class="text-gray-600 mb-4" data-en="We provide comprehensive roof repair services to fix leaks, damaged shingles, flashing issues, and other common roofing problems. Our repairs are durable and designed to extend the life of your roof." data-es="Ofrecemos servicios completos de reparación de techos para solucionar goteras, tejas dañadas, problemas de flashing y otros problemas comunes. Nuestras reparaciones son duraderas y diseñadas para extender la vida útil de su techo.">We provide comprehensive roof repair services to fix leaks, damaged shingles, flashing issues, and other common roofing problems. Our repairs are durable and designed to extend the life of your roof.</p>
+                        <a href="#contact" class="text-blue-500 font-medium inline-flex items-center" data-en="Learn more" data-es="Saber más">
+                            <span>Learn more</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 6 - Added Roof Inspection -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-teal-500 flex items-center justify-center">
+                        <i class="fas fa-search text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3" data-en="Roof Inspection" data-es="Inspección de Techos">Roof Inspection</h3>
+                        <p class="text-gray-600 mb-4" data-en="Our professional roof inspections identify current and potential issues with your roof. We provide detailed reports with recommendations to help you make informed decisions about maintenance or replacement." data-es="Nuestras inspecciones profesionales de techos identifican problemas actuales y potenciales con su techo. Proporcionamos informes detallados con recomendaciones para ayudarle a tomar decisiones informadas sobre mantenimiento o reemplazo.">Our professional roof inspections identify current and potential issues with your roof. We provide detailed reports with recommendations to help you make informed decisions about maintenance or replacement.</p>
+                        <a href="#contact" class="text-blue-500 font-medium inline-flex items-center" data-en="Learn more" data-es="Saber más">
+                            <span>Learn more</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Carousel Section -->
+    <section id="gallery" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12" data-en="Our Work Gallery" data-es="Galería de Nuestro Trabajo">Our Work Gallery</h2>
+            
+            <div class="carousel relative rounded-lg overflow-hidden shadow-xl">
+                <div class="carousel-inner">
+                    <div class="carousel-item">
+                        <img src="https://lh3.googleusercontent.com/glsgmb/AMnFcupEok_s-iTCjv72ULL0XYhNuBHclFsoeK9NbmJah0NSFeE1o9LvkPVpGm-5MWbB9edIStlRCW3MDlJTrGhIOetOCA=w168-h126-p-k-no-rj-sc0x00ffffff" alt="Roofing project 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Roofing project 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1600566752227-8f3e8a57d521?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Roofing project 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Roofing project 4">
+                    </div>
+                </div>
+                <button class="carousel-control prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-control next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="carousel-indicators">
+                    <div class="carousel-indicator active"></div>
+                    <div class="carousel-indicator"></div>
+                    <div class="carousel-indicator"></div>
+                    <div class="carousel-indicator"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12" data-en="Customer Reviews" data-es="Reseñas de Clientes">Customer Reviews</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="review-card bg-white p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-10 w-10 rounded-full" src="https://randomuser.me/api/portraits/men/32.jpg" alt="John D.">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-semibold">John D.</h4>
+                            <div class="flex">
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4" data-en="Ekiwa Roofing did an amazing job on our new roof. The team was professional, punctual, and the quality of work was outstanding. Highly recommend!" data-es="Ekiwa Roofing hizo un trabajo increíble en nuestro nuevo techo. El equipo fue profesional, puntual y la calidad del trabajo fue excepcional. ¡Altamente recomendado!">Ekiwa Roofing did an amazing job on our new roof. The team was professional, punctual, and the quality of work was outstanding. Highly recommend!</p>
+                    <div class="text-sm text-gray-500" data-en="Posted on Google" data-es="Publicado en Google">Posted on Google</div>
+                </div>
+                
+                <!-- Review 2 -->
+                <div class="review-card bg-white p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-10 w-10 rounded-full" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah M.">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-semibold">Sarah M.</h4>
+                            <div class="flex">
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4" data-en="We had our roof replaced after storm damage. Ekiwa Roofing was responsive, gave us a fair price, and completed the work ahead of schedule. Very satisfied!" data-es="Reemplazamos nuestro techo después de daños por tormenta. Ekiwa Roofing respondió rápidamente, nos dio un precio justo y completó el trabajo antes de lo programado. ¡Muy satisfecha!">We had our roof replaced after storm damage. Ekiwa Roofing was responsive, gave us a fair price, and completed the work ahead of schedule. Very satisfied!</p>
+                    <div class="text-sm text-gray-500" data-en="Posted on Google" data-es="Publicado en Google">Postsed on Google</div>
+                </div>
+                
+                <!-- Review 3 -->
+                <div class="review-card bg-white p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-10 w-10 rounded-full" src="https://randomuser.me/api/portraits/men/75.jpg" alt="Robert T.">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-semibold">Robert T.</h4>
+                            <div class="flex">
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star-half-alt"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4" data-en="Great experience overall. The crew was professional and cleaned up thoroughly after the job. Only minor scheduling delay, but the quality of work made up for it." data-es="Excelente experiencia en general. El equipo fue profesional y limpió a fondo después del trabajo. Solo un pequeño retraso en la programación, pero la calidad del trabajo lo compensó.">Great experience overall. The crew was professional and cleaned up thoroughly after the job. Only minor scheduling delay, but the quality of work made up for it.</p>
+                    <div class="text-sm text-gray-500" data-en="Posted on Google" data-es="Publicado en Google">Posted on Google</div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://www.google.com/search?q=Ekiwa+Roofing+and+Construction+LLC" target="_blank" class="inline-flex items-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300" data-en="See More Reviews on Google" data-es="Ver Más Reseñas en Google">
+                    <i class="fab fa-google mr-2"></i>
+                    <span>See More Reviews on Google</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Roofing team at work" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6" data-en="About Ekiwa Roofing" data-es="Acerca de Ekiwa Roofing">About Ekiwa Roofing</h2>
+                    <p class="text-gray-600 mb-4" data-en="Ekiwa Roofing and Construction LLC is a trusted roofing company serving the Ridgefield, WA area and surrounding communities. With years of experience in the industry, we take pride in delivering top-quality roofing solutions to both residential and commercial clients." data-es="Ekiwa Roofing and Construction LLC es una empresa de techado de confianza que sirve al área de Ridgefield, WA y comunidades circundantes. Con años de experiencia en la industria, nos enorgullecemos de ofrecer soluciones de techado de la más alta calidad tanto a clientes residenciales como comerciales.">Ekiwa Roofing and Construction LLC is a trusted roofing company serving the Ridgefield, WA area and surrounding communities. With years of experience in the industry, we take pride in delivering top-quality roofing solutions to both residential and commercial clients.</p>
+                    <p class="text-gray-600 mb-4" data-en="Our team of skilled professionals is committed to excellence in every project we undertake. We use only the highest quality materials and follow industry best practices to ensure your roof is built to last." data-es="Nuestro equipo de profesionales calificados está comprometido con la excelencia en cada proyecto que emprendemos. Utilizamos solo materiales de la más alta calidad y seguimos las mejores prácticas de la industria para garantizar que su techo esté construido para durar.">Our team of skilled professionals is committed to excellence in every project we undertake. We use only the highest quality materials and follow industry best practices to ensure your roof is built to last.</p>
+                    <div class="mt-6">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span class="text-gray-700" data-en="Licensed and insured professionals" data-es="Profesionales licenciados y asegurados">Licensed and insured professionals</span>
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span class="text-gray-700" data-en="Quality materials and workmanship" data-es="Materiales y mano de obra de calidad">Quality materials and workmanship</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span class="text-gray-700" data-en="Competitive pricing and free estimates" data-es="Precios competitivos y estimados gratuitos">Competitive pricing and free estimates</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12" data-en="Contact Us" data-es="Contáctenos">Contact Us</h2>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h3 class="text-xl font-semibold mb-4" data-en="Get in Touch" data-es="Póngase en Contacto">Get in Touch</h3>
+                    <p class="text-gray-600 mb-6" data-en="Ready to start your roofing project? Contact us today for a free estimate or to discuss your roofing needs with our experts." data-es="¿Listo para comenzar su proyecto de techado? Contáctenos hoy para obtener un presupuesto gratuito o para discutir sus necesidades de techado con nuestros expertos.">Ready to start your roofing project? Contact us today for a free estimate or to discuss your roofing needs with our experts.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="contact-icon bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium" data-en="Address" data-es="Dirección">Address</h4>
+                                <p class="text-gray-600">415 NE 194th Ridgefield, WA 98642</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="contact-icon bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-green-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium" data-en="Phone" data-es="Teléfono">Phone</h4>
+                                <p class="text-gray-600">+1 360-836-9449</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="contact-icon bg-red-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-red-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium" data-en="Email" data-es="Correo Electrónico">Email</h4>
+                                <p class="text-gray-600">ekiwaroofingandconstructionllc@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="contact-icon bg-yellow-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-clock text-yellow-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium" data-en="Business Hours" data-es="Horario Comercial">Business Hours</h4>
+                                <p class="text-gray-600" data-en="Monday to Friday: 8am - 4pm Sunday: Closed" data-es="Lunes a Viernes: 8am - 4pm<br>Domingo: Cerrado">Monday to Friday: 8am - 4pm<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-4" data-en="Send Us a Message" data-es="Envíenos un Mensaje">Send Us a Message</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 mb-2" data-en="Your Name" data-es="Su Nombre">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 mb-2" data-en="Your Email" data-es="Su Correo Electrónico">Your Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="phone" class="block text-gray-700 mb-2" data-en="Your Phone" data-es="Su Teléfono">Your Phone</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="service" class="block text-gray-700 mb-2" data-en="Service Interested In" data-es="Servicio de Interés">Service Interested In</label>
+                                <select id="service" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="" data-en="Select a service" data-es="Seleccione un servicio">Select a service</option>
+                                    <option value="shingles" data-en="Shingles Installation" data-es="Instalación de Tejas">Shingles Installation</option>
+                                    <option value="tpo" data-en="TPO Membrane" data-es="Membrana TPO">TPO Membrane</option>
+                                    <option value="metal" data-en="Metal Sheet Roof" data-es="Techos de Lámina Metálica">Metal Sheet Roof</option>
+                                    <option value="tear-off" data-en="Roof Tear-Off" data-es="Remoción de Techos">Roof Tear-Off</option>
+                                    <option value="repair" data-en="Roof Repair" data-es="Reparación de Techos">Roof Repair</option>
+                                    <option value="inspection" data-en="Roof Inspection" data-es="Inspección de Techos">Roof Inspection</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 mb-2" data-en="Your Message" data-es="Su Mensaje">Your Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            </div>
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg w-full transition duration-300" data-en="Send Message" data-es="Enviar Mensaje">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="h-96 w-full">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2792.30212411704!2d-122.72901592377813!3d45.59714497107574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5495a6d8c7b5f6d5%3A0x1a3e1a3e1a3e1a3e!2s415%20NE%20194th%20Ave%2C%20Ridgefield%2C%20WA%2098642%2C%20USA!5e0!3m2!1sen!2s!4v1689876543210!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-home text-blue-400 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">Ekiwa Roofing</span>
+                    </div>
+                    <p class="text-gray-400 max-w-xs" data-en="Quality roofing solutions for residential and commercial properties in Ridgefield, WA and surrounding areas." data-es="Soluciones de techado de calidad para propiedades residenciales y comerciales en Ridgefield, WA y áreas circundantes.">Quality roofing solutions for residential and commercial properties in Ridgefield, WA and surrounding areas.</p>
+                </div>
+                
+                <div class="mb-6 md:mb-0">
+                    <h4 class="text-lg font-semibold mb-4" data-en="Quick Links" data-es="Enlaces Rápidos">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300" data-en="Home" data-es="Inicio">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300" data-en="Services" data-es="Servicios">Services</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-white transition duration-300" data-en="Gallery" data-es="Galería">Gallery</a></li>
+                        <li><a href="#reviews" class="text-gray-400 hover:text-white transition duration-300" data-en="Reviews" data-es="Reseñas">Reviews</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300" data-en="About" data-es="Nosotros">About</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300" data-en="Contact" data-es="Contacto">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-en="Connect With Us" data-es="Conéctese Con Nosotros">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p data-en="&copy; 2023 Ekiwa Roofing and Construction LLC. All rights reserved." data-es="&copy; 2025 Ekiwa Roofing and Construction LLC. Todos los derechos reservados.">&copy; 2023 Ekiwa Roofing and Construction LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Language switcher functionality
+        let currentLanguage = 'en';
+        
+        document.getElementById('switchToEnglish').addEventListener('click', function() {
+            if (currentLanguage !== 'en') {
+                switchLanguage('en');
+                currentLanguage = 'en';
+                document.getElementById('switchToEnglish').classList.remove('bg-gray-200', 'text-gray-800');
+                document.getElementById('switchToEnglish').classList.add('bg-blue-500', 'text-white');
+                document.getElementById('switchToSpanish').classList.remove('bg-blue-500', 'text-white');
+                document.getElementById('switchToSpanish').classList.add('bg-gray-200', 'text-gray-800');
+            }
+        });
+        
+        document.getElementById('switchToSpanish').addEventListener('click', function() {
+            if (currentLanguage !== 'es') {
+                switchLanguage('es');
+                currentLanguage = 'es';
+                document.getElementById('switchToSpanish').classList.remove('bg-gray-200', 'text-gray-800');
+                document.getElementById('switchToSpanish').classList.add('bg-blue-500', 'text-white');
+                document.getElementById('switchToEnglish').classList.remove('bg-blue-500', 'text-white');
+                document.getElementById('switchToEnglish').classList.add('bg-gray-200', 'text-gray-800');
+            }
+        });
+        
+        function switchLanguage(lang) {
+            // Update all elements with data-en and data-es attributes
+            const elements = document.querySelectorAll('[data-en], [data-es]');
+            elements.forEach(element => {
+                if (element.tagName === 'OPTION') {
+                    // Special handling for select options
+                    if (element.hasAttribute('selected')) {
+                        element.removeAttribute('selected');
+                    }
+                    if (element.getAttribute('value') === document.getElementById('service').value) {
+                        element.setAttribute('selected', 'selected');
+                    }
+                }
+                
+                if (element.hasAttribute(`data-${lang}`)) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = element.getAttribute(`data-${lang}`);
+                    } else if (element.tagName === 'IMG') {
+                        element.alt = element.getAttribute(`data-${lang}`);
+                    } else {
+                        element.textContent = element.getAttribute(`data-${lang}`);
+                    }
+                }
+            });
+            
+            // Update select options
+            const select = document.getElementById('service');
+            if (select) {
+                const selectedValue = select.value;
+                select.innerHTML = '';
+                
+                const options = [
+                    { value: '', text: { en: 'Select a service', es: 'Seleccione un servicio' } },
+                    { value: 'shingles', text: { en: 'Shingles Installation', es: 'Instalación de Tejas' } },
+                    { value: 'tpo', text: { en: 'TPO Membrane', es: 'Membrana TPO' } },
+                    { value: 'metal', text: { en: 'Metal Sheet Roof', es: 'Techos de Lámina Metálica' } },
+                    { value: 'tear-off', text: { en: 'Roof Tear-Off', es: 'Remoción de Techos' } },
+                    { value: 'repair', text: { en: 'Roof Repair', es: 'Reparación de Techos' } },
+                    { value: 'inspection', text: { en: 'Roof Inspection', es: 'Inspección de Techos' } }
+                ];
+                
+                options.forEach(option => {
+                    const optElement = document.createElement('option');
+                    optElement.value = option.value;
+                    optElement.textContent = option.text[lang];
+                    if (option.value === selectedValue) {
+                        optElement.selected = true;
+                    }
+                    select.appendChild(optElement);
+                });
+            }
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.querySelector('.carousel');
+            const inner = carousel.querySelector('.carousel-inner');
+            const items = carousel.querySelectorAll('.carousel-item');
+            const prevBtn = carousel.querySelector('.prev');
+            const nextBtn = carousel.querySelector('.next');
+            const indicators = carousel.querySelectorAll('.carousel-indicator');
+            
+            let currentIndex = 0;
+            const itemCount = items.length;
+            
+            function updateCarousel() {
+                inner.style.transform = `translateX(-${currentIndex * 100}%)`;
+                
+                // Update indicators
+                indicators.forEach((indicator, index) => {
+                    if (index === currentIndex) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+            }
+            
+            prevBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : itemCount - 1;
+                updateCarousel();
+            });
+            
+            nextBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex < itemCount - 1) ? currentIndex + 1 : 0;
+                updateCarousel();
+            });
+            
+            // Auto-rotate carousel
+            let interval = setInterval(function() {
+                currentIndex = (currentIndex < itemCount - 1) ? currentIndex + 1 : 0;
+                updateCarousel();
+            }, 5000);
+            
+            // Pause on hover
+            carousel.addEventListener('mouseenter', function() {
+                clearInterval(interval);
+            });
+            
+            carousel.addEventListener('mouseleave', function() {
+                interval = setInterval(function() {
+                    currentIndex = (currentIndex < itemCount - 1) ? currentIndex + 1 : 0;
+                    updateCarousel();
+                }, 5000);
+            });
+            
+            // Click on indicator
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', function() {
+                    currentIndex = index;
+                    updateCarousel();
+                });
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=chronozain/ekiwa" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
