@@ -318,59 +318,81 @@
             </div>
         </div>
     </section>
-<!-- Galeria fotos -->
-<div class="max-w-4xl mx-auto text-center my-10">
-  <!-- Botón de ver/ocultar -->
+<!-- Galería Expandible -->
+<div class="max-w-6xl mx-auto text-center my-10 px-4">
+  <!-- Botón -->
   <button id="toggleGalleryBtn"
     class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition duration-300">
     Ver todas las fotos / View All Photos
   </button>
 
-  <!-- Sección de galería oculta -->
-  <div id="gallerySection" class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 hidden transition-all duration-500">
-    <!-- Reemplaza estas imágenes con las tuyas -->
-    <img src="Imagenes/10.jfif" alt="Foto 10" class="rounded-lg shadow-md">
-<img src="Imagenes/11.jfif" alt="Foto 11" class="rounded-lg shadow-md">
-<img src="Imagenes/12.jfif" alt="Foto 12" class="rounded-lg shadow-md">
-<img src="Imagenes/13.jfif" alt="Foto 13" class="rounded-lg shadow-md">
-<img src="Imagenes/14.jfif" alt="Foto 14" class="rounded-lg shadow-md">
-<img src="Imagenes/15.jfif" alt="Foto 15" class="rounded-lg shadow-md">
-<img src="Imagenes/16.jfif" alt="Foto 16" class="rounded-lg shadow-md">
-<img src="Imagenes/17.jfif" alt="Foto 17" class="rounded-lg shadow-md">
-<img src="Imagenes/18.jfif" alt="Foto 18" class="rounded-lg shadow-md">
-<img src="Imagenes/19.jfif" alt="Foto 19" class="rounded-lg shadow-md">
-<img src="Imagenes/20.jfif" alt="Foto 20" class="rounded-lg shadow-md">
-<img src="Imagenes/21.jfif" alt="Foto 21" class="rounded-lg shadow-md">
-<img src="Imagenes/22.jfif" alt="Foto 22" class="rounded-lg shadow-md">
-<img src="Imagenes/23.jfif" alt="Foto 23" class="rounded-lg shadow-md">
-<img src="Imagenes/24.jfif" alt="Foto 24" class="rounded-lg shadow-md">
-<img src="Imagenes/25.jfif" alt="Foto 25" class="rounded-lg shadow-md">
-<img src="Imagenes/26.jfif" alt="Foto 26" class="rounded-lg shadow-md">
-<img src="Imagenes/27.jfif" alt="Foto 27" class="rounded-lg shadow-md">
-<img src="Imagenes/28.jfif" alt="Foto 28" class="rounded-lg shadow-md">
-<img src="Imagenes/29.jfif" alt="Foto 29" class="rounded-lg shadow-md">
-<img src="Imagenes/30.jfif" alt="Foto 30" class="rounded-lg shadow-md">
-<img src="Imagenes/31.jfif" alt="Foto 31" class="rounded-lg shadow-md">
-<img src="Imagenes/32.jfif" alt="Foto 32" class="rounded-lg shadow-md">
-<img src="Imagenes/33.jfif" alt="Foto 33" class="rounded-lg shadow-md">
-<img src="Imagenes/34.jfif" alt="Foto 34" class="rounded-lg shadow-md">
-<img src="Imagenes/35.jfif" alt="Foto 35" class="rounded-lg shadow-md">
+  <!-- Galería -->
+  <div id="gallerySection" class="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 hidden">
+
+    <img src="Imagenes/10.jfif" alt="Foto 10" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
+<img src="Imagenes/11.jfif" alt="Foto 11" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
+<img src="Imagenes/12.jfif" alt="Foto 12" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
+<img src="Imagenes/13.jfif" alt="Foto 13" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
+<img src="Imagenes/14.jfif" alt="Foto 14" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
+<img src="Imagenes/15.jfif" alt="Foto 15" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
+<img src="Imagenes/16.jfif" alt="Foto 16" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
+<img src="Imagenes/17.jfif" alt="Foto 17" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
+<img src="Imagenes/18.jfif" alt="Foto 18" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
+<img src="Imagenes/19.jfif" alt="Foto 19" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
+<img src="Imagenes/20.jfif" alt="Foto 20" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
+<img src="Imagenes/21.jfif" alt="Foto 21" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
+<img src="Imagenes/22.jfif" alt="Foto 22" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
+<img src="Imagenes/23.jfif" alt="Foto 23" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
+<img src="Imagenes/24.jfif" alt="Foto 24" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
+<img src="Imagenes/25.jfif" alt="Foto 25" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
+<img src="Imagenes/26.jfif" alt="Foto 26" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
+<img src="Imagenes/27.jfif" alt="Foto 27" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
+<img src="Imagenes/28.jfif" alt="Foto 28" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
+<img src="Imagenes/29.jfif" alt="Foto 29" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
+<img src="Imagenes/30.jfif" alt="Foto 30" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
+<img src="Imagenes/31.jfif" alt="Foto 31" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
+<img src="Imagenes/32.jfif" alt="Foto 32" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
+<img src="Imagenes/33.jfif" alt="Foto 33" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
+<img src="Imagenes/34.jfif" alt="Foto 34" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
+<img src="Imagenes/35.jfif" alt="Foto 35" class="gallery-img w-full h-48 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105">
 
   </div>
 </div>
 
+<!-- Lightbox personalizado -->
+<div id="lightbox"
+  class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden transition-opacity duration-300">
+  <img id="lightboxImg" src="" alt="Expanded" class="max-w-full max-h-[90vh] rounded-lg shadow-lg">
+</div>
+
+<!-- Scripts -->
 <script>
+  // Mostrar/Ocultar galería
   const toggleBtn = document.getElementById("toggleGalleryBtn");
   const gallery = document.getElementById("gallerySection");
 
   toggleBtn.addEventListener("click", () => {
     gallery.classList.toggle("hidden");
+    toggleBtn.textContent = gallery.classList.contains("hidden")
+      ? "Ver todas las fotos / View All Photos"
+      : "Ocultar fotos / Hide Photos";
+  });
 
-    if (gallery.classList.contains("hidden")) {
-      toggleBtn.textContent = "Ver todas las fotos / View All Photos";
-    } else {
-      toggleBtn.textContent = "Ocultar fotos / Hide Photos";
-    }
+  // Lightbox funcionalidad
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightboxImg");
+
+  document.querySelectorAll(".gallery-img").forEach(img => {
+    img.addEventListener("click", () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.remove("hidden");
+    });
+  });
+
+  // Cerrar lightbox al hacer clic afuera
+  lightbox.addEventListener("click", () => {
+    lightbox.classList.add("hidden");
+    lightboxImg.src = "";
   });
 </script>
     
