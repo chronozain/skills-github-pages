@@ -466,39 +466,33 @@
                 <div class="md:w-1/2">
                     <div class="bg-white p-6 rounded-lg shadow-md">
                         <h3 class="text-xl font-semibold mb-4" data-en="Send Us a Message" data-es="Envíenos un Mensaje">Send Us a Message</h3>
-                        <form action="https://formsubmit.co/chronozain@gmail.com" method="POST">
-    <input type="hidden" name="_next" value="https://chronozain.github.io/skills-github-pages/">
-    <input type="hidden" name="_captcha" value="false">
-                            <div class="mb-4">
-                                <label for="name" class="block text-gray-700 mb-2" data-en="Your Name" data-es="Su Nombre">Your Name</label>
-                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            </div>
-                            <div class="mb-4">
-                                <label for="email" class="block text-gray-700 mb-2" data-en="Your Email" data-es="Su Correo Electrónico">Your Email</label>
-                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            </div>
-                            <div class="mb-4">
-                                <label for="phone" class="block text-gray-700 mb-2" data-en="Your Phone" data-es="Su Teléfono">Your Phone</label>
-                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            </div>
-                            <div class="mb-4">
-                                <label for="service" class="block text-gray-700 mb-2" data-en="Service Interested In" data-es="Servicio de Interés">Service Interested In</label>
-                                <select id="service" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                    <option value="" data-en="Select a service" data-es="Seleccione un servicio">Select a service</option>
-                                    <option value="shingles" data-en="Shingles Installation" data-es="Instalación de Tejas">Shingles Installation</option>
-                                    <option value="tpo" data-en="TPO Membrane" data-es="Membrana TPO">TPO Membrane</option>
-                                    <option value="metal" data-en="Metal Sheet Roof" data-es="Techos de Lámina Metálica">Metal Sheet Roof</option>
-                                    <option value="tear-off" data-en="Roof Tear-Off" data-es="Remoción de Techos">Roof Tear-Off</option>
-                                    <option value="repair" data-en="Roof Repair" data-es="Reparación de Techos">Roof Repair</option>
-                                    <option value="inspection" data-en="Roof Inspection" data-es="Inspección de Techos">Roof Inspection</option>
-                                </select>
-                            </div>
-                            <div class="mb-4">
-                                <label for="message" class="block text-gray-700 mb-2" data-en="Your Message" data-es="Su Mensaje">Your Message</label>
-                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-                            </div>
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg w-full transition duration-300" data-en="Send Message" data-es="Enviar Mensaje">Send Message</button>
-                        </form>
+                         <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+
+    <input type="hidden" name="access_key" value="85531aec-aace-4190-9f9a-1a0b484f4e05" />
+    <input type="hidden" name="subject" value="New Contact Form Submission from Web3Forms" />
+    <input type="hidden" name="from_name" value="My Website" />
+    <!-- More custom ization options available in the docs: https://docs.web3forms.com -->
+
+    <div class="form-group-container">
+      <div class="form-group">
+        <label for="name" class="form-label">Name</label>
+        <input id="name" name="name" class="form-input" placeholder="Your name" type="text" />
+      </div>
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input id="email" name="email" class="form-input" placeholder="Your email" type="email" />
+      </div>
+      <div class="form-group">
+        <label for="phone" class="form-label">Phone</label>
+        <input id="phone" name="phone" class="form-input" placeholder="+1 (234) 56789" type="text" />
+      </div>
+      <div class="form-group">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-textarea" id="message" name="message" placeholder="Your message"></textarea>
+      </div>
+    </div>
+    <button class="form-submit" type="submit">Send Message</button>
+  </form>
                     </div>
                 </div>
             </div>
